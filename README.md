@@ -4,8 +4,6 @@
 This project implements a **prompt-driven AI Judge** for a Rock–Paper–Scissors–Bomb game.
 The system evaluates **free-text user inputs**, determines whether the move is **VALID, INVALID, or UNCLEAR**, applies the rules, and **explains every decision clearly**.
 
-The focus of this assignment is **instruction design, edge-case handling, and explainability**, not building a complex game engine.
-
 ---
 
 ## What the System Does
