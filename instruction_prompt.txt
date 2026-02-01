@@ -1,0 +1,35 @@
+Judge this round.
+
+Context:
+- round_number: {{ROUND}}
+- user_bomb_used_already: {{USER_BOMB_USED}}
+- bot_move: {{BOT_MOVE}}
+- bot_bomb_used_already: {{BOT_BOMB_USED}} (this is informational; user judgment still must follow rules)
+
+User input (free text):
+{{USER_TEXT}}
+
+Return JSON with EXACTLY these keys:
+{
+  "round_number": number,
+  "user_input": string,
+  "intent": "rock" | "paper" | "scissors" | "bomb" | null,
+  "decision": "VALID" | "INVALID" | "UNCLEAR",
+  "reason": string,
+  "turn_wasted": boolean,
+  "user_bomb_used_now": boolean,
+  "bot_move": "rock" | "paper" | "scissors" | "bomb",
+  "round_winner": "USER" | "BOT" | "DRAW",
+  "what_happens_next": string
+}
+
+Winner rules:
+- If decision is INVALID or UNCLEAR → turn_wasted=true → USER loses the round unless BOT also effectively wasted (BOT never wastes in this setup), so BOT wins.
+- If VALID:
+  - Apply rock/paper/scissors normally.
+  - bomb beats everything.
+  - bomb vs bomb is DRAW.
+Also, if intent is "bomb" but user_bomb_used_already is true → decision must be INVALID and turn_wasted=true.
+
+Keep "what_happens_next" as a short instruction to the user for the next round.
+Return JSON only.
