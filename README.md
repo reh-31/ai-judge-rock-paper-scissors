@@ -1,1 +1,0 @@
-# ai-judge-rock-paper-scissors
