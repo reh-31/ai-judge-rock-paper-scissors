@@ -66,3 +66,11 @@ Inputs containing uncertainty words (e.g., *maybe*, *I think*, question marks) a
 
 ## Sample Output
 
+User input: maybe paper
+User move: None (UNCLEAR)
+Bot move:  scissors
+Winner:    BOT
+Winner:    BOT
+Reason:    The input 'maybe paper' expresses uncertainty or hesitation, making the intended move ambiguous.
+Next:      Your move was unclear. Please state exactly one move: rock, paper, scissors, or bomb.
+
